@@ -65,7 +65,17 @@ public class ProjectConfig
         AuthenticationManagerBuilder auth) 
                 throws Exception {
     
-        var userDetailsService = 
+        
+        auth.inMemoryAuthentication()
+            .withUser("john")
+            .password("12445")
+            .authorities("read")
+            .and()
+            .passwordEncoder(
+              NoOpPasswordEncoder.getInstance() );
+
+
+        /* var userDetailsService = 
             new InMemoryUserDetailsManager();
 
         var user = User.withUsername("john")
@@ -77,7 +87,7 @@ public class ProjectConfig
 
         auth.userDetailsService(userDetailsService)
          .passwordEncoder(
-             NoOpPasswordEncoder.getInstance());
+             NoOpPasswordEncoder.getInstance());*/
 
     }
 }
