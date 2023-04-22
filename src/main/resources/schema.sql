@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS `spring`.`users`
+CREATE TABLE IF NOT EXISTS `spring`.`login_users`
  (`id` INT NOT NULL AUTO_INCREMENT,
-`username` VARCHAR(45) NULL,
+`user` VARCHAR(45) NULL,
 `password` VARCHAR(45) NULL,
 `enabled` INT NOT NULL,PRIMARY KEY (`id`));
 

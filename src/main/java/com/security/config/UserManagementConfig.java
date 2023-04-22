@@ -27,7 +27,25 @@ public class UserManagementConfig {
     public UserDetailsService 
          userDetailsService(DataSource dts){
 
-      return new JdbcUserDetailsManager(dts);
+     String usersByUsernameQuery =
+         "SELECT user, password, enabled "+
+          "FROM login_users WHERE user = ? ";
+
+     String authsByUserQuery = 
+         "SELECT username, authority FROM "+
+          "authorities WHERE username = ?";
+
+      var userDetailsManager = 
+          new JdbcUserDetailsManager(dts);
+
+     userDetailsManager
+     .setUsersByUsernameQuery(usersByUsernameQuery);
+
+     userDetailsManager
+   .setAuthoritiesByUsernameQuery(authsByUserQuery);
+      
+      return userDetailsManager;
+     //return new JdbcUserDetailsManager(dts);
 
 
        // var userDetailsService = 
