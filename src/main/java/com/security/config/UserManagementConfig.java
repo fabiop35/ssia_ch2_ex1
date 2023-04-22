@@ -9,18 +9,26 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 //import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+import javax.sql.DataSource;
+
 import java.util.List;
 
 //import com.security.model.DummyUser;
 import com.security.model.User;
 import com.security.service.InMemoryUserDetailsService;
 
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+
 @Configuration
 public class UserManagementConfig {
 
 
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService 
+         userDetailsService(DataSource dts){
+
+      return new JdbcUserDetailsManager(dts);
+
 
        // var userDetailsService = 
          //    new InMemoryUserDetailsManager();
@@ -30,15 +38,15 @@ public class UserManagementConfig {
            .authorities("read")
            .build(); */
        //DummyUser user = new DummyUser();
-       UserDetails u = 
+       /* UserDetails u = 
            new User("bill", "123", "read");
 
        List<UserDetails> users = 
-                            List.of(u);
+                            List.of(u); */
 
        //userDetailsService.createUser(user); 
        //return userDetailsService;
-       return new InMemoryUserDetailsService(users);
+       //return new InMemoryUserDetailsService(users);
 
     }
 
