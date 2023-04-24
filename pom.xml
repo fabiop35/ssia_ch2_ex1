@@ -49,6 +49,13 @@
    <artifactId>unboundid-ldapsdk</artifactId>
  </dependency>
 
+ <!-- improve the development time while working with the Spring Boot application. Utilities like restst the server-->
+<dependency>
+  <groupId>org.springframework.boot</groupId> 
+  <artifactId>spring-boot-devtools</artifactId>
+  <scope>runtime</scope>
+ </dependency>
+
  <dependency>
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-test</artifactId>

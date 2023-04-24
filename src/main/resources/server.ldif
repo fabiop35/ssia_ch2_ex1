@@ -9,13 +9,13 @@ objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
-dn: uid=johny,ou=groups,dc=springframework,dc=org
+dn: uid= bill,ou=groups,dc=springframework,dc=org
 objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
-cn: joh
-sn: Billy
+cn: bill
+sn: bill
 uid: bill
 userPassword: 123
 

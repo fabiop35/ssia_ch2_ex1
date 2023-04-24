@@ -23,6 +23,8 @@ import org.springframework.security.ldap.DefaultLdapUsernameToDnMapper;
 import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
 import org.springframework.security.ldap.userdetails.LdapUserDetailsManager;
 
+import com.security.config.PlainTextPasswordEncoder;
+
 @Configuration
 public class UserManagementConfig {
 
@@ -91,7 +93,9 @@ DefaultLdapUsernameToDnMapper("ou=groups", "uid") );
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
+
+        return new PlainTextPasswordEncoder();
+        //return NoOpPasswordEncoder.getInstance();
     }
 
 }
