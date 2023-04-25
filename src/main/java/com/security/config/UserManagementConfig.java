@@ -94,7 +94,8 @@ DefaultLdapUsernameToDnMapper("ou=groups", "uid") );
     @Bean
     public PasswordEncoder passwordEncoder(){
 
-        return new PlainTextPasswordEncoder();
+        return new Sha512PasswordEncoder();
+        //return new PlainTextPasswordEncoder();
         //return NoOpPasswordEncoder.getInstance();
     }
 
