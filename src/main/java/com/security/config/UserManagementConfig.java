@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 //import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 import javax.sql.DataSource;
@@ -93,8 +94,15 @@ DefaultLdapUsernameToDnMapper("ou=groups", "uid") );
 
     @Bean
     public PasswordEncoder passwordEncoder(){
+        
+        PasswordEncoder p = 
+             new StandardPasswordEncoder();
+        System.out.println("ENCRYPT STANDARD: ");
+        System.out.println(p.encode("123"));
+        return p; 
+        //String result = encoder.encode("myPassword");
 
-        return new Sha512PasswordEncoder();
+        //return new Sha512PasswordEncoder();
         //return new PlainTextPasswordEncoder();
         //return NoOpPasswordEncoder.getInstance();
     }

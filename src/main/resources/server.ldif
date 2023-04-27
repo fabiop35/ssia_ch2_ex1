@@ -29,6 +29,15 @@ sn: jon
 uid: jon
 userPassword: 3c999afec25354d551dae2159bb26e38d53f2173b8d3dc3eee4c47e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2
 
+dn: uid=peter,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: peter
+sn: peter
+uid: peter
+userPassword: 2c0b94216f39dffa03e01897697b3c12adcaf22ad55bcd73d72d399947434d7360bdcf0e4096e7ce
 
 
 
